@@ -1,57 +1,54 @@
-# Task Manager - MERN Stack Application  
+# Task Manager - MERN Stack Application
 
-This is a Task Manager application built with the MERN stack (MongoDB, Express.js, React, and Node.js). Follow the steps below to set up and run the project locally on **macOS** or **Windows**.  
-
----
-
-## Prerequisites  
-
-Before running the project, ensure you have the following installed:  
-
-- **Node.js** (v16 or later) - [Download Node.js](https://nodejs.org/)  
-- **npm** (comes with Node.js) or **Yarn** (optional)  
-- **MongoDB** (local or cloud-based) - [Download MongoDB](https://www.mongodb.com/try/download/community)  
+This is a Task Manager application built with the MERN stack (MongoDB, Express.js, React, and Node.js). Follow the steps below to set up and run the project locally on **macOS** or **Windows**.
 
 ---
 
-## Setup Instructions  
+## Prerequisites
 
-### 1. Clone the Repository  
+Before running the project, ensure you have the following installed:
+
+- **Node.js** (v16 or later) - [Download Node.js](https://nodejs.org/)
+- **npm** (comes with Node.js) or **Yarn** (optional)
+- **MongoDB** (local or cloud-based) - [Download MongoDB](https://www.mongodb.com/try/download/community)
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AdibOmi/task-manager.git
 cd task-manager
 ```
 
-### 2. Install Dependencies  
+### 2. Install Dependencies
 
-The project has two main directories:  
+The project has two main directories:
 
-- **`backend/`** (Backend - Node.js & Express)  
-- **`frontend/`** (Frontend - React)  
+- **`backend/`** (Backend - Node.js & Express)
+- **`frontend/Task-Manager/`** (Frontend - React)
 
-Install dependencies for both:  
+Install dependencies for both:
 
-#### Backend (Server) Setup  
+#### Backend (Server) Setup
 
 ```bash
 cd backend
 npm install
 ```
 
-#### Frontend (Client) Setup  
+#### Frontend (Client) Setup
 
 ```bash
-cd frontend
-cd Task-Manager
+cd ../frontend/Task-Manager
 npm install
 ```
 
-### 3. Configure Environment Variables  
+### 3. Configure Environment Variables
 
-#### Backend (Server)  
-
-Create a `.env` file in the `server/` directory with the following:  
+Create a `.env` file inside the `backend/` directory:
 
 ```env
 MONGO_URI=mongodb://127.0.0.1:27017/taskmanager
@@ -60,119 +57,54 @@ ADMIN_INVITE_TOKEN=4588944
 PORT=8000
 ```
 
-- Use `MONGODB_URI` with your MongoDB connection string (local or cloud-based).  
-  
-#### Frontend (Client)  
+> ✅ Use `4588944` as Admin Invite Token to sign up as Admin.
 
-Create a `4588944` as Admin Invite Token to Sign Up as Admin  
+---
 
-```env
-REACT_APP_API_BASE_URL=http://localhost:5000
+## 4. Start MongoDB
+
+### 🖥 macOS
+
+```bash
+# 1. Create the local data directory (only once)
+mkdir -p ~/data/db
+
+# 2. Start MongoDB with the custom data path
+mongod --dbpath ~/data/db
 ```
 
-- This ensures the frontend communicates with the backend.  
+> 💡 Keep this terminal open so MongoDB keeps running.
 
-### 4. Start MongoDB  
+### 🪟 Windows
 
-Ensure MongoDB is running locally or provide a cloud-based connection string.  
-
-#### For Local MongoDB (macOS/Linux)
+Start MongoDB via **Services**, or run:
 
 ```bash
 mongod
 ```
 
-(Keep this running in a separate terminal.)  
+---
 
-#### For Windows  
+## 5. Run the Application
 
-- Start MongoDB from **Services** or run:  
-
-```bash
-mongod
-```
-
-### 5. Run the Application  
-
-#### Start the Backend (Server)  
+### Start the Backend (Server)
 
 ```bash
-cd server
-npm start
+cd backend
+npm run dev
 ```
 
-(The server will run on `http://localhost:5000`.)  
+> The server runs at: `http://localhost:8000`
 
-#### Start the Frontend (Client)  
+### Start the Frontend (Client)
 
 ```bash
-cd ../client
-npm start
+cd ../frontend/Task-Manager
+npm run dev
 ```
 
-(The React app will open in your browser at `http://localhost:3000`.)  
+> The React app runs at: `http://localhost:3000`
 
 ---
 
-## Running with Docker (Optional)  
-
-If you have **Docker** installed, you can run the entire stack in containers:  
-
-1. Ensure Docker is running.  
-2. From the project root, run:  
-
-   ```bash
-   docker-compose up --build
-   ```
-
-3. Access:  
-   - Frontend: `http://localhost:3000`  
-   - Backend: `http://localhost:5000`  
-
----
-
-## Testing  
-
-To run tests (if available):  
-
-### Backend Tests  
-
-```bash
-cd server
-npm test
-```
-
-#### Frontend Tests  
-
-```bash
-cd client
-npm test
-```
-
----
-
-## Troubleshooting  
-
-- **MongoDB Connection Issues**:  
-  - Ensure MongoDB is running (`mongod`).  
-  - If using **MongoDB Atlas**, check the connection string in `.env`.  
-
-- **Port Conflicts**:  
-  - Change `PORT` in `.env` if `5000` or `3000` is occupied.  
-
-- **Missing Dependencies**:  
-  - Delete `node_modules` and re-run `npm install`.  
-
----
-
-## License  
-
-This project is open-source.  
-
----
-
-## Support  
-
-For issues or questions, please open an issue in the repository.  
-
-Happy coding! 🚀
+You're all set! 🎉
