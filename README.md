@@ -48,7 +48,7 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Create a `.env` file inside the `backend/` directory:
+The `.env` file has already been created inside the `backend/` directory shown below:
 
 ```env
 MONGO_URI=mongodb://127.0.0.1:27017/taskmanager
