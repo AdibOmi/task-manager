@@ -2,6 +2,15 @@
 
 This is a Task Manager application built with the MERN stack (MongoDB, Express.js, React, and Node.js). Follow the steps below to set up and run the project locally on **macOS** or **Windows**.
 
+## Admin Sign-Up
+
+Signing up as an admin requires using the `ADMIN_INVITE_TOKEN`, which is set as `4588944` in the `.env` file located in the `task-manager/backend/` directory. This token grants admin privileges, allowing the user to assign tasks to other users.  
+**Note:** Signing up without using the `4588944` token will automatically register the user as a general user without admin access.
+
+## User Requirements
+
+To perform task assignments and utilize CRUD features (Create, Read, Update, Delete), as well as other functionalities, more than one user must be logged in.
+
 ---
 
 ## Prerequisites
